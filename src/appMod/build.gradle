@@ -2,14 +2,6 @@ plugins {
     id 'application'
 }
 
-sourceSets {
-    main {
-        java {
-            srcDirs 'appModSrc'
-        }
-    }
-}
-
 application {
     mainClassName 'appPack.Entry'
 }
@@ -34,5 +26,14 @@ jar {
 }
 
 dependencies {
-    implementation project(':src:greetMod')
+    implementation project(':greetMod')
+    implementation project(':coreMod')
+}
+
+run {
+    doFirst {
+        jvmArgs '--module-path', classpath.asPath
+        jvmArgs '--module', "appMod/$mainClassName"
+        classpath = files()
+    }
 }

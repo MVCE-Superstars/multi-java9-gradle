@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="stackoverflow.src.appMod.main" target="1.9" />
+      <module name="stackoverflow.src.appMod.test" target="1.9" />
+      <module name="stackoverflow.src.greetMod.main" target="1.9" />
+      <module name="stackoverflow.src.greetMod.test" target="1.9" />
+      <module name="stackoverflow.src.main" target="1.9" />
+      <module name="stackoverflow.src.test" target="1.9" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

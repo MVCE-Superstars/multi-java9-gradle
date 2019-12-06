@@ -1,4 +1,22 @@
+buildscript {
+    repositories {
+        gradlePluginPortal()
+    }
+    dependencies {
+        classpath 'org.kordamp.gradle:settings-gradle-plugin:0.30.4'
+    }
+}
+
+apply plugin: "org.kordamp.gradle.settings"
+
 rootProject.name = 'stackoverflow'
 
-include 'src:greetMod'
-include 'src:appMod'
+projects {
+    layout = 'multi-level'
+    directories = [
+            'src/greetMod',
+            'src/appMod',
+            'src/coreMod'
+    ]
+    enforceNamingConvention = false
+}

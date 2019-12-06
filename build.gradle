@@ -1,7 +1,7 @@
 group 'org.sample'
 version '1.0-SNAPSHOT'
 
-subprojects {
+subprojects { Project sub ->
     apply plugin: 'java'
 
     sourceCompatibility = 1.9
@@ -12,6 +12,16 @@ subprojects {
                     '--module-path', classpath.asPath
             ]
             classpath = files()
+        }
+    }
+
+    afterEvaluate {
+        sourceSets {
+            main {
+                java {
+                    srcDirs "${sub.name}Src"
+                }
+            }
         }
     }
 }
